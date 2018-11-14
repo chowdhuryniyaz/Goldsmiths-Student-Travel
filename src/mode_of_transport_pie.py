@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from pandas.api.types import CategoricalDtype
 from loadData import *
+import matplotlib.patheffects as path_effects
 
 path = './data/survey_responses.csv'
 
@@ -12,11 +13,11 @@ colours = ['#ffa600', '#ff6361', '#bc5090', '#58508d', '#003f5c']
 
 # create pie chart from mode_of_transport column
 plt.pie(df.mode_of_transport.value_counts(),
-        #wedgeprops={'alpha':0.85},
-        #textprops={'color':  'saddlebrown'},
         colors=colours,
         labels=df.mode_of_transport.cat.categories,
         startangle=90,
+        wedgeprops = {'linewidth': 0.5, 'edgecolor' : 'lightgrey'},
+        textprops={'size': 'small', 'weight':'heavy'},
         autopct='%.0f%%')
 
 # create legend
