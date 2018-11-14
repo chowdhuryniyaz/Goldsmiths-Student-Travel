@@ -3,8 +3,6 @@ import pandas as pd
 import numpy as np
 from pandas.api.types import CategoricalDtype
 
-
-
 def loadData(path):
     """
     Load the data into a Pandas DataFrame. 
@@ -30,6 +28,13 @@ def loadData(path):
     return df
 
 def convertDataType(df):
+    """
+    Convert column data types to categorical
+    Args:
+        df: Dataset as a Pandas DataFrame.
+    Returns:
+        df: Data as a Pandas DataFrame, column data types converted to categorical
+    """
     # set data type of postcode column as nominal
     postcode_type = CategoricalDtype(ordered=False, categories=['SE14', 'E14', 'NW4', 'SE8', 'N8', 'E4', 'NW1', 
     'other', 'E3', 'SE1', 'SW2', 'E10', 'N15', 'E2', 'SE18', 'N1', 'EC2', 'SE4'])
@@ -85,7 +90,6 @@ def convertDataType(df):
     level_of_study_type = CategoricalDtype(ordered=False, categories=['FT undergraduate', 'FT postgraduate', 'Foundation','PT undergraduate', 'PT postgraduate', 'not sure'])
     df['level_of_study'] = df['level_of_study'].apply(levelOfStudyHelper).astype(level_of_study_type)
     
-
     # create mode_of_study column to separate FT/PT students
     mode_of_study_type = CategoricalDtype(ordered=False, categories=['full time', 'part time', 'other'])
     df['mode_of_study'] = df['level_of_study'].map({'FT undergraduate': 'full time', 'FT postgraduate': 'full time', 'Foundation': 'full time', 'PT undergraduate': 'part time', 'PT postgraduate': 'part time', 'not sure': 'other'}).astype(mode_of_study_type)
@@ -98,6 +102,13 @@ def convertDataType(df):
 
 # assign easier to type values in region column
 def regionHelper(x):
+    """
+    Convert column data types to categorical
+    Args:
+        x: string - value in a column
+    Returns:
+        x: modified string
+    """
     if x == 'I am a UK citizen studying in the UK':
         return 'UK'
     elif x == 'I am an international student from within the EU studying in the UK':
@@ -145,17 +156,4 @@ def getSection1(df):
     'dep_monday', 'dep_tuesday', 'dep_wednesday', 'dep_thursday', 'dep_friday', 'mode_of_transport']]
     
     return section1_df
-
-path = './data/survey_responses.csv'
-df=loadData(path)
-df = convertDataType(df)
-print(df['mode_of_transport'])
-#print(df.mode_of_study.unique())
-#print(df.level_of_study.value_counts())
-#print(df.level_of_study.unique())
-#print(df['avg_journey_time'])
-
-
-
-#print(df['level_of_study'].cat.categories)
 
