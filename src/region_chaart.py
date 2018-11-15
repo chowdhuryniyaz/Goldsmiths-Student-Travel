@@ -18,7 +18,7 @@ colours = ['#bc5090', '#003f5c', '#ffa600']
 
 fig, ax = plt.subplots(figsize=(6, 4))
 
-# create pie chart from gender column
+# create pie chart from region column
 patches, texts, autotexts = ax.pie(df.region.value_counts(),
         colors=colours,
         labels=df.region.cat.categories,

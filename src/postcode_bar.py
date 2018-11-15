@@ -23,7 +23,7 @@ pct = counts / counts.sum() * 100
 
 fig, ax = plt.subplots()
 colours=['#4D962E', '#70AD56', '#90CC76', '#B8EFA0', '#D2FFBF']
-# Function to map the colors as a list from the input list of x variables
+# Function to map the colors as a list from the input list of x variables (value counts)
 def pltcolor(lst):
     cols=[]
     for l in lst:
