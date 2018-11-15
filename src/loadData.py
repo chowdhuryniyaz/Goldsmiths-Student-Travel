@@ -37,9 +37,9 @@ def convertDataType(df):
     """
     # set data type of postcode column as nominal
     postcode_type = CategoricalDtype(ordered=False, categories=['SE14', 'E14', 'NW4', 'SE8', 'N8', 'E4', 'NW1', 
-    'other', 'E3', 'SE1', 'SW2', 'E10', 'N15', 'E2', 'SE18', 'N1', 'EC2', 'SE4'])
+    'other', 'E3', 'SE1', 'SW2', 'E10', 'N15', 'E2', 'SE18', 'N1', 'EC2', 'SE4', 'I would prefer not to say'])
     df['postcode'] = df['postcode'].map({'SE14 New Cross': 'SE14', 'Other': 'other', 'E14 Poplar': 'E14',
-    'I would prefer not to say': 'other', 'NW4 Hendon': 'NW4', 'SE8 Deptford': 'SE8', 'N8 Hornsey': 'N8',
+    'I would prefer not to say': 'I would prefer not to say', 'NW4 Hendon': 'NW4', 'SE8 Deptford': 'SE8', 'N8 Hornsey': 'N8',
     'E4 Chingford': 'E4', 'NW1 Head district': 'NW1', 'E3 Bow': 'E3', 'SE1 Head district': 'SE1', 
     'SW2 Brixton': 'SW2', 'E10 Leyton': 'E10', 'N15 South Tottenham': 'N15', 'E2 Bethnal Green': 'E2',
     'SE18 Woolwich': 'SE18', 'N1 Head district': 'N1', 'EC2 Bishopsgate': 'EC2', 'SE4 Brockley': 'SE4'}).astype(postcode_type)

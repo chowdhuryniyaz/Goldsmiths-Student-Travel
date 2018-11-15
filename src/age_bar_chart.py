@@ -24,7 +24,7 @@ pct = counts / counts.sum() * 100
 fig, ax = plt.subplots()
 colours=['#4D962E', '#70AD56', '#90CC76', '#B8EFA0', '#D2FFBF']
 
-
+# make bar chart of age data
 pct.plot(kind='barh',
 ax = ax,
 color=colours,
