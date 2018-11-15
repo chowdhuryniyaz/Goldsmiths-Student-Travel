@@ -83,13 +83,12 @@ ax2_height, ax2_width = get_ax_size(ax2)
 x4_x, x4_y = get_x_and_y(0, ax2)
 x5_x, x2_y = get_x_and_y(1, ax2)
 x6_x, x6_y = get_x_and_y(2, ax2)
-w3=x4_x+x5_x
-w4=x4_x+x5_x+x6_x
+
 # add text
 ax2.text(0, 0.1, 'Level of study', fontdict={'fontweight':'bold', 'fontsize':14})
 ax2.text(0, -0.15, 'Undergraduate: {:.0f}%'.format(x4_x), fontdict={'color':'#3C8C1A', 'fontweight':'heavy', 'fontsize':12})
-ax2.text(w4, -0.15, 'Postgraduate: {:.0f}%'.format(x5_x), fontdict={'color':'#70AD56', 'fontweight':'heavy', 'fontsize':12, 'horizontalalignment':'right'})
-ax2.text(w4, -0.25, 'Foundation: {:.0f}%'.format(x6_x), fontdict={'color':'#90CC76', 'fontweight':'heavy', 'fontsize':12, 'horizontalalignment':'right'})
+ax2.text(w2, -0.15, 'Postgraduate: {:.0f}%'.format(x5_x), fontdict={'color':'#70AD56', 'fontweight':'heavy', 'fontsize':12, 'horizontalalignment':'right'})
+ax2.text(w2, -0.25, 'Foundation: {:.0f}%'.format(x6_x), fontdict={'color':'#90CC76', 'fontweight':'heavy', 'fontsize':12, 'horizontalalignment':'right'})
 # hide axis
 ax2.axis('off')
 

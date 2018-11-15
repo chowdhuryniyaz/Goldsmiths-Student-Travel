@@ -12,7 +12,7 @@ def loadData(path):
     Returns:
         df: Data as a Pandas DataFrame.
     """
-    colnames = ['timestamp', 'postcode', 'accomodation_type', 'avg_journey_time', 
+    colnames = ['timestamp', 'postcode', 'accommodation_type', 'avg_journey_time', 
     'arr_monday', 'arr_tuesday', 'arr_wednesday', 'arr_thursday', 'arr_friday', 
     'dep_monday', 'dep_tuesday', 'dep_wednesday', 'dep_thursday', 'dep_friday', 'mode_of_transport',
     'why_public_transport', 'modes_pt', 'station', 'ticket_type',
@@ -45,12 +45,12 @@ def convertDataType(df):
     'SE18 Woolwich': 'SE18', 'N1 Head district': 'N1', 'EC2 Bishopsgate': 'EC2', 'SE4 Brockley': 'SE4'}).astype(postcode_type)
 
     # set data type of accomodation_type column as nominal
-    accomodation_types = CategoricalDtype(ordered=False, categories=['rent', 'own_home', 'halls_of_residence', 'with_parents', 'other'])
-    df['accomodation_type'] = df['accomodation_type'].map({'Living with parents/guardians during term time': 'with_parents', 
-    'Shared rental accomodation': 'rent', 
-    'Your own permanent residence (either owned or rented)': 'own_home',
-    'Goldsmiths halls of residence': 'halls_of_residence',
-    'I would prefer not to say': 'other', np.NaN: 'other'}).astype(accomodation_types)
+    accommodation_types = CategoricalDtype(ordered=False, categories=['Rent', 'Own home', 'Halls of residence', 'With parents', 'other'])
+    df['accommodation_type'] = df['accommodation_type'].map({'Living with parents/guardians during term time': 'With parents', 
+    'Shared rental accomodation': 'Rent', 
+    'Your own permanent residence (either owned or rented)': 'Own home',
+    'Goldsmiths halls of residence': 'Halls of residence',
+    'I would prefer not to say': 'other', np.NaN: 'other'}).astype(accommodation_types)
 
     # set data type of avg_journey_time column as ordinal
     journey_time_type = CategoricalDtype(ordered=True, categories=['Less than 15 minutes', '15 - 30 minutes', '31 - 45 minutes',
@@ -155,7 +155,7 @@ def getSection1(df):
     Returns:
         section1_df: Demographic data as a Pandas DataFrame.
     """
-    section1_df = df.loc[:, ['postcode', 'accomodation_type', 'avg_journey_time', 
+    section1_df = df.loc[:, ['postcode', 'accommodation_type', 'avg_journey_time', 
     'arr_monday', 'arr_tuesday', 'arr_wednesday', 'arr_thursday', 'arr_friday', 
     'dep_monday', 'dep_tuesday', 'dep_wednesday', 'dep_thursday', 'dep_friday', 'mode_of_transport']]
     
