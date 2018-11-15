@@ -18,10 +18,10 @@ colours = ['#ffa600', '#ff6361', '#bc5090', '#58508d']
 fig, ax = plt.subplots(figsize=(6, 4))
 
 # create pie chart from gender column
-patches, texts, autotexts = ax.pie(df.gender.value_counts(),
+patches, texts, autotexts = ax.pie(df.gender.value_counts(sort=False),
         colors=colours,
         labels=df.gender.cat.categories,
-        startangle=50,
+        startangle=60,
         wedgeprops = {'linewidth': 0.5, 'edgecolor' : 'lightgrey', 'width':0.5},
         textprops={'weight':'heavy'},
         autopct='%.0f%%',
