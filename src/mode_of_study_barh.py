@@ -31,7 +31,7 @@ x2 = ax.patches[1].get_width()
 # add text
 ax.text(0, 0.05, 'Mode of study', fontdict={'fontweight':'bold', 'fontsize':14})
 ax.text(0, -0.05, 'Full time: {:.0f}%'.format(x1), fontdict={'color':'#3C8C1A', 'fontweight':'heavy', 'fontsize':12})
-ax.text(x1, -0.05, 'Part time: {:.0f}%'.format(x2), fontdict={'color':'#70AD56', 'fontweight':'heavy', 'fontsize':12})
+ax.text(x1-x2/2, -0.05, 'Part time: {:.0f}%'.format(x2), fontdict={'color':'#70AD56', 'fontweight':'heavy', 'fontsize':12})
 # hide axis
 plt.axis('off')
 plt.tight_layout()

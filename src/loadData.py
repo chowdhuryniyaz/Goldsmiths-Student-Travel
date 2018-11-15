@@ -89,11 +89,15 @@ def convertDataType(df):
     # set data type of level of study as nominal
     level_of_study_type = CategoricalDtype(ordered=False, categories=['FT undergraduate', 'FT postgraduate', 'Foundation','PT undergraduate', 'PT postgraduate', 'not sure'])
     df['level_of_study'] = df['level_of_study'].apply(levelOfStudyHelper).astype(level_of_study_type)
-    
+
     # create mode_of_study column to separate FT/PT students
     mode_of_study_type = CategoricalDtype(ordered=False, categories=['full time', 'part time', 'other'])
     df['mode_of_study'] = df['level_of_study'].map({'FT undergraduate': 'full time', 'FT postgraduate': 'full time', 'Foundation': 'full time', 'PT undergraduate': 'part time', 'PT postgraduate': 'part time', 'not sure': 'other'}).astype(mode_of_study_type)
-
+    
+    # set ordinal level of study category (foundation<undergrad<postgrad)
+    level_type = CategoricalDtype(ordered=True, categories=['foundation','undergraduate', 'postgraduate', 'other'])
+    df['level'] = df['level_of_study'].map({'FT undergraduate': 'undergraduate', 'FT postgraduate': 'postgraduate', 'Foundation': 'foundation', 'PT undergraduate': 'undergraduate', 'PT postgraduate': 'postgraduate', 'not sure': 'other'}).astype(level_type)
+    
     # set data type of year of study column as ordinal
     year_of_study_type = CategoricalDtype(ordered=True, categories=['0', '1', '2', '3', '3+', 'other'])
     df['year_of_study'] = df['year_of_study'].map({'0 (Foundation only)': '0', '1 (UG)': '1', '2 (UG)': '2', '3 (UG)': '3', '3+': '3+', np.NaN: 'other'}).astype(year_of_study_type)

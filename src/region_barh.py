@@ -30,8 +30,8 @@ x3 = ax.patches[2].get_width()
 # add text
 ax.text(0, 0.05, 'Where students come from', fontdict={'fontweight':'bold', 'fontsize':14})
 ax.text(0, -0.05, 'UK: {:.0f}%'.format(x1), fontdict={'color':'#3C8C1A', 'fontweight':'heavy', 'fontsize':12})
-ax.text(x1, -0.05, 'EU: {:.0f}%'.format(x2), fontdict={'color':'#70AD56', 'fontweight':'heavy', 'fontsize':12})
-ax.text(x1+x2, -0.073, 'overseas: {:.0f}%'.format(x3), fontdict={'color':'#90CC76', 'fontweight':'heavy', 'fontsize':12})
+ax.text(x1-x2, -0.05, 'EU: {:.0f}%'.format(x2), fontdict={'color':'#70AD56', 'fontweight':'heavy', 'fontsize':12})
+ax.text(x1-x2, -0.075, 'overseas: {:.0f}%'.format(x3), fontdict={'color':'#90CC76', 'fontweight':'heavy', 'fontsize':12})
 # hide axis
 plt.axis('off')
 plt.tight_layout()
