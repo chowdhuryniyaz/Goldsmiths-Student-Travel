@@ -24,23 +24,23 @@ fig, ax = plt.subplots(figsize=(6, 4))
 # create pie chart from gender column
 patches, texts, autotexts = ax.pie(df.gender.value_counts(sort=False),
         colors=colours,
-        labels=df.gender.cat.categories,
+        #labels=df.gender.cat.categories,
         startangle=60,
-        wedgeprops = {'linewidth': 0.5, 'edgecolor' : 'lightgrey', 'width':0.5},
-        textprops={'weight':'heavy'},
+        wedgeprops = {'linewidth': 0.75, 'edgecolor' : 'lightgrey', 'width':0.5},
+        #textprops={'weight':'heavy'},
         autopct='%.0f%%',
         pctdistance=0.75, 
         labeldistance=1.1)
 
 for t in autotexts:
-        t.set_fontsize(14)
+        t.set_fontsize(12)
         
 # Equal aspect ratio ensures that pie is drawn as a circle.
 ax.axis('equal')
 plt.subplots_adjust(bottom=0.1)
 
-# Put a legend below current axis
-#plt.legend(df.gender.cat.categories,bbox_to_anchor=(0.5,0),loc="lower center", bbox_transform=fig.transFigure, ncol=2)
+# Put a legend next to the chart, hide frame
+plt.legend(df.gender.cat.categories,bbox_to_anchor=(1,0.5),loc="center left", frameon=False)
 plt.title("Gender split", pad=30, weight='heavy')
 plt.tight_layout()
 

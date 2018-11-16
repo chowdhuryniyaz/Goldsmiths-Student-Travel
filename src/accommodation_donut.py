@@ -20,14 +20,14 @@ df = df[['accommodation_type']]
 
 colours = ['#ffa600', '#ff6361', '#bc5090', '#58508d']
 
-ig, ax = plt.subplots(figsize=(6, 4))
+fig, ax = plt.subplots(figsize=(6, 4))
 
-# create pie chart from gender column
+# create pie chart from accommodation_type column
 patches, texts, autotexts = ax.pie(df.accommodation_type.value_counts(sort=False),
         colors=colours,
-        labels=df.accommodation_type.cat.categories,
+        #labels=df.accommodation_type.cat.categories,
         startangle=90,
-        wedgeprops = {'linewidth': 0.5, 'edgecolor' : 'lightgrey', 'width':0.5},
+        wedgeprops = {'linewidth': 0.75, 'edgecolor' : 'lightgrey', 'width':0.5},
         #textprops={'weight':'heavy'},
         autopct='%.0f%%',
         pctdistance=0.75, 
@@ -40,8 +40,8 @@ for t in autotexts:
 ax.axis('equal')
 plt.subplots_adjust(bottom=0.1)
 
-# Put a legend below current axis
-#plt.legend(df.gender.cat.categories,bbox_to_anchor=(0.5,0),loc="lower center", bbox_transform=fig.transFigure, ncol=2)
+# Put a legend next to the chart, hide frame
+plt.legend(df.accommodation_type.cat.categories,bbox_to_anchor=(1,0.5),loc="center left", frameon=False)
 plt.title("Accommodation type", pad=30, weight='heavy')
 plt.tight_layout()
 
