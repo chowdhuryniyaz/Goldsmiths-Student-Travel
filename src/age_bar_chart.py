@@ -21,7 +21,7 @@ counts = df['age'].value_counts(sort=False)
 pct = counts / counts.sum() * 100
 
 fig, ax = plt.subplots()
-colours=['#4D962E', '#70AD56', '#90CC76', '#B8EFA0', '#D2FFBF']
+colours=['#004c6d', '#247392', '#449cb7', '#66c7dc', '#8bf3ff']
 
 # make bar chart of age data
 pct.plot(kind='barh',

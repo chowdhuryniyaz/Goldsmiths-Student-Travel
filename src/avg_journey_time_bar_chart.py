@@ -18,11 +18,12 @@ counts = df['avg_journey_time'].value_counts(sort=False)
 pct = counts / counts.sum() * 100
 
 fig, ax = plt.subplots()
+colours=['#004c6d', '#247392', '#449cb7', '#66c7dc', '#8bf3ff']
 
 # make bar chart of avg_journey_time data
 pct.plot(kind='barh',
 ax = ax,
-color='#4D962E',
+color='#004c6d',
 rot=0)
 ax.set_xlabel('%')
 ax.set_ylabel('Journey time')
