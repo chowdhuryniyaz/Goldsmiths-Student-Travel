@@ -120,5 +120,5 @@ ax3.axis('off')
 
 plt.tight_layout()
 # to save the chart as a png image, uncomment the line below
-#plt.savefig("region_barh.png", bbox_inches="tight", dpi=200)
+#plt.savefig("student_stats.png", bbox_inches="tight", dpi=200)
 plt.show()

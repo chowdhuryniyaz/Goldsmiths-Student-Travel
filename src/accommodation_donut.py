@@ -10,14 +10,13 @@ path = './data/survey_responses.csv'
 df = loadData(path)
 df = convertDataType(df)
 
-print(df['accommodation_type'].value_counts())
-
 # term time accommodation
 # respondents who refused an answer are not included in the analysis 
 df = df[df['accommodation_type'] != 'other']
 df.accommodation_type.cat.remove_categories('other', inplace=True)
 df = df[['accommodation_type']]
 
+# use visually equidistant colours
 colours = ['#ffa600', '#ff6361', '#bc5090', '#58508d']
 
 fig, ax = plt.subplots(figsize=(6, 4))
@@ -46,5 +45,5 @@ plt.title("Accommodation type", pad=30, weight='heavy')
 plt.tight_layout()
 
 # to save the chart as a png image, uncomment the line below
-#plt.savefig("gender_split_pie.png", bbox_inches="tight", dpi=200)
+#plt.savefig("accomodation_donut.png", bbox_inches="tight", dpi=200)
 plt.show()

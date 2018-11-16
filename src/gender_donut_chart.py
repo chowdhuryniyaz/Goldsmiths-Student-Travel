@@ -13,9 +13,11 @@ df = convertDataType(df)
 
 # respondents who refused an answer are not included in the analysis 
 df.gender.cat.remove_categories('I would prefer not to say', inplace=True)
+
+# use visually equidistant colours
 colours = ['#ffa600', '#ff6361', '#bc5090', '#58508d']
 #table = df.groupby(['gender', 'mode_of_transport'])['gender'].count().reset_index(name="count")
-# to get vlue counts for subgroups
+# to get value counts for crosstabulated data
 #table2 = pd.crosstab(df['mode_of_transport'], df['gender'])
 #table2.to_csv('gender_and_mode.csv')
 
@@ -45,5 +47,5 @@ plt.title("Gender split", pad=30, weight='heavy')
 plt.tight_layout()
 
 # to save the chart as a png image, uncomment the line below
-#plt.savefig("gender_split_pie.png", bbox_inches="tight", dpi=200)
+#plt.savefig("gender_split_donut.png", bbox_inches="tight", dpi=200)
 plt.show()

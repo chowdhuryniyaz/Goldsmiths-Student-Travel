@@ -6,8 +6,11 @@ from loadData import *
 
 path = './data/survey_responses.csv'
 
+# load and preprocess data
 df = loadData(path)
 df = convertDataType(df)
+
+# use visually equidistant colours
 colours = ['#ffa600', '#ff6361', '#bc5090', '#58508d', '#003f5c']
 fig, ax = plt.subplots(figsize=(6, 4))
 # create donut chart from mode_of_transport column
