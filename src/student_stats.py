@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from pandas.api.types import CategoricalDtype
-from loadData import *
+from loadData import loadData, convertDataType
 from textwrap import wrap
 
 path = './data/survey_responses.csv'
