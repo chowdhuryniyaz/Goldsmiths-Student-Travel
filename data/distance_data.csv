@@ -1,0 +1,30 @@
+,postcode,avg_journey_time,mode_of_transport,distance,distance_cat
+0,SE14,Less than 15 minutes,walking,282.0,0 - <1 km
+1,E4,More than 60 minutes,public transport,8092.0,5-9.99 km
+2,I would prefer not to say,Less than 15 minutes,walking,8092.0,5-9.99 km
+3,E2,Less than 15 minutes,bicycle,8218.0,5-9.99 km
+4,N8,46 - 60 minutes,motor vehicle,15868.0,More than 10 km
+5,other,31 - 45 minutes,public transport,7634.083333333333,5-9.99 km
+6,SE14,Less than 15 minutes,walking,282.0,0 - <1 km
+7,E14,15 - 30 minutes,public transport,5923.0,5-9.99 km
+8,E10,15 - 30 minutes,public transport,13179.0,More than 10 km
+9,E14,31 - 45 minutes,public transport,5923.0,5-9.99 km
+10,N1,31 - 45 minutes,public transport,10366.0,More than 10 km
+11,SE18,31 - 45 minutes,motor vehicle,8893.0,5-9.99 km
+12,I would prefer not to say,31 - 45 minutes,public transport,8092.0,5-9.99 km
+13,NW4,More than 60 minutes,public transport,20548.0,More than 10 km
+14,other,46 - 60 minutes,public transport,7634.083333333333,5-9.99 km
+15,other,More than 60 minutes,public transport,7634.083333333333,5-9.99 km
+16,SE4,Less than 15 minutes,walking,2378.0,2-4.99 km
+17,other,More than 60 minutes,public transport,7634.083333333333,5-9.99 km
+18,N15,More than 60 minutes,public transport,14738.0,More than 10 km
+19,SE14,15 - 30 minutes,walking,282.0,0 - <1 km
+20,SE14,Less than 15 minutes,walking,282.0,0 - <1 km
+21,other,More than 60 minutes,public transport,7634.083333333333,5-9.99 km
+22,SW2,46 - 60 minutes,public transport,7758.0,5-9.99 km
+23,NW4,46 - 60 minutes,public transport,20548.0,More than 10 km
+24,SE14,Less than 15 minutes,walking,282.0,0 - <1 km
+25,SE8,15 - 30 minutes,public transport,1218.0,1-1.99 km
+26,EC2,15 - 30 minutes,public transport,8092.0,5-9.99 km
+27,SE1,Less than 15 minutes,public transport,5594.0,5-9.99 km
+28,E3,46 - 60 minutes,public transport,8288.0,5-9.99 km

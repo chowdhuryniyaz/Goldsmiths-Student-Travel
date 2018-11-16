@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 # In[4]:
 
 
-df = pd.read_csv('Student Transport Survey.csv', index_col=0)
+df = pd.read_csv('./data/survey_responses.csv', index_col=0)
 
 
 # In[5]:
@@ -109,4 +109,6 @@ labels.sort() #Sorts the list
 plt.pie(values, counterclock=False, autopct='%1.1f%%')
 plt.title('Age range of participants')
 plt.legend(labels, loc=3)
+
+plt.show()
 

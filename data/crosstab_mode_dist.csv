@@ -1,0 +1,6 @@
+mode_of_transport,0 - <1 km,1-1.99 km,2-4.99 km,5-9.99 km,More than 10 km,All
+bicycle,0,0,0,1,0,1
+motor vehicle,0,0,0,1,1,2
+public transport,0,1,0,13,5,19
+walking,5,0,1,1,0,7
+All,5,1,1,16,6,29
