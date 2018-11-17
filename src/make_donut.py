@@ -30,7 +30,7 @@ def make_donut(df, column, title):
 
     # Put a legend next to the chart, hide frame
     plt.legend(column.cat.categories,bbox_to_anchor=(1,0.5),loc="center left", frameon=False)
-    plt.title(title, pad=30, weight='heavy')
+    plt.title(title, pad=10, weight='heavy')
     plt.tight_layout()
 
     # save the chart as a png image
