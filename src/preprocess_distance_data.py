@@ -43,7 +43,7 @@ def preprocess(df):
         else:
             # pass origin and destination variables to distance_matrix function
             # output in meters
-            result = gmaps.distance_matrix('London {}'.format(postcode), 'SE14 6LS', mode='walking')["rows"][0]["elements"][0]["distance"]["value"]
+            result = gmaps.distance_matrix('London {}'.format(postcode), 'SE14 6LS', mode=mode)["rows"][0]["elements"][0]["distance"]["value"]
             distance.append(result)
 
     # add the calculated distances to our dataframe (distance in meters)
