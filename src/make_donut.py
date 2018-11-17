@@ -34,6 +34,6 @@ def make_donut(df, column, title):
     plt.tight_layout()
 
     # save the chart as a png image
-    plt.savefig('{}.png'.format(title), bbox_inches="tight", dpi=200)
+    plt.savefig('{}.png'.format(title), bbox_inches="tight", dpi=300)
     
     plt.show()
