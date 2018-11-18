@@ -77,6 +77,11 @@ def convertDataType(df):
     safe_level = CategoricalDtype(ordered = True, categories = ['Very unsafe', 'Somewhat unsafe', 'Neither safe nor unsafe', 'Somewhat safe', 'Very safe'])
     df['feel_safe_walking'] = df['feel_safe_walking'].astype(safe_level)
 
+    # set data type for likert scale agreements when walking
+    likert_agreement = CategoricalDtype(ordered = True, categories = ['Strongly disagree', 'Somewhat disagree', 'Neither agree nor disagree', 'Somewhat agree', 'Strongly agree'])
+    for col in ['pedestrian_crossings', 'congested_route', 'walk_alone', 'well_maintained_pavements', 'litter_on_route', 'lighting_at_night', 'pavements_not_wide']:
+        df[col] = df[col].astype(likert_agreement)
+
     # set data type of age column as ordinal (ordered categorical)
     age_type = CategoricalDtype(ordered=True, categories=['18 - 21', '22 - 25', '26 - 30', '31 - 40', 'Over 40', 'I would prefer not to say'])
     df['age'] = df['age'].astype(age_type)
