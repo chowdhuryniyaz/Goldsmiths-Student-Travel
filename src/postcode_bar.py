@@ -1,8 +1,6 @@
 import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
 from pandas.api.types import CategoricalDtype
-from loadData import *
+from loadData import loadData, convertDataType
 from textwrap import wrap
 
 path = './data/survey_responses.csv'
@@ -17,7 +15,7 @@ df.postcode.cat.remove_categories('I would prefer not to say', inplace=True)
 
 # count the frequency for each category
 counts = df['postcode'].value_counts(sort=True)
-print(df['postcode'].value_counts())
+
 # calcuate percentages from counts
 pct = counts / counts.sum() * 100
 
