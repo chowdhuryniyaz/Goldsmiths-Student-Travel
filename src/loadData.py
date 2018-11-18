@@ -73,6 +73,10 @@ def convertDataType(df):
     mode_type = CategoricalDtype(ordered=False, categories=['public transport', 'walking', 'motor vehicle', 'bicycle', 'other'])
     df['mode_of_transport'] = df['mode_of_transport'].map({'Public transport':'public transport', 'On foot': 'walking', 'Motor vehicle (car or motorcycle/scooter)':'motor vehicle', 'Bicycle':'bicycle', np.NaN:'other'}).astype(mode_type)
 
+    # set data type for feeling safe when walking
+    safe_level = CategoricalDtype(ordered = True, categories = ['Very unsafe', 'Somewhat unsafe', 'Neither safe nor unsafe', 'Somewhat safe', 'Very safe'])
+    df['feel_safe_walking'] = df['feel_safe_walking'].astype(safe_level)
+
     # set data type of age column as ordinal (ordered categorical)
     age_type = CategoricalDtype(ordered=True, categories=['18 - 21', '22 - 25', '26 - 30', '31 - 40', 'Over 40', 'I would prefer not to say'])
     df['age'] = df['age'].astype(age_type)
