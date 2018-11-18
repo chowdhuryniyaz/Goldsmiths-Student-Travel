@@ -1,0 +1,6 @@
+mode_of_transport,Less than 15 minutes,15 - 30 minutes,31 - 45 minutes,46 - 60 minutes,More than 60 minutes,All
+public transport,1,4,4,5,6,20
+walking,6,1,0,0,0,7
+motor vehicle,0,0,1,1,0,2
+bicycle,1,0,0,0,0,1
+All,8,6,6,5,5,30

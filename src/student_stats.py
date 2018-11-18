@@ -18,20 +18,12 @@ def get_x_and_y(point, ax):
     y = ax.patches[point].get_height()
     return x, y
 
-# returns ax size
-def get_ax_size(ax):
-    bbox = ax.get_window_extent().transformed(fig.dpi_scale_trans.inverted())
-    width, height = bbox.width, bbox.height
-    width *= fig.dpi
-    height *= fig.dpi
-    return width, height
-
 # load and preprocess data
 df = loadData(path)
 df = convertDataType(df)
 
 # Divide the figure into a 3.3 grid, and give each ax a row
-fig, (ax1, ax2, ax3) = plt.subplots(3, 1)
+fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(6,4))
 
 # region
 # respondents who refused an answer are not included in the analysis 
@@ -40,17 +32,12 @@ df_region = df_region[df_region['region'] != 'other']
 df_region.region.cat.remove_categories('other', inplace=True)
 df_region = df_region[['region']]
 
-
 region_pct = pct(df_region)
 # plot values as stacked bar
 region_pct.plot(ax = ax1,kind='barh', stacked=True, rot=0, width=0.1, color=['#004c6d', '#449cb7', '#8bf3ff'], legend=None)
 
-ax1_height, ax1_width = get_ax_size(ax1)
-print(ax1_width)
 # get width of each bar section
-#x1 = ax1.patches[0].get_width()
 x1_x, x1_y = get_x_and_y(0, ax1)
-print(x1_x)
 x2_x, x2_y = get_x_and_y(1, ax1)
 x3_x, x2_y = get_x_and_y(2, ax1)
 w1=x1_x+x2_x
@@ -76,10 +63,7 @@ level_pct = pct(df_level)
 # plot values as stacked bar
 level_pct.plot(ax = ax2,kind='barh', stacked=True, rot=0, width=0.1, color=['#004c6d', '#449cb7', '#8bf3ff'], legend=None)
 
-ax2_height, ax2_width = get_ax_size(ax2)
-
 # get width of each bar section
-
 x4_x, x4_y = get_x_and_y(0, ax2)
 x5_x, x2_y = get_x_and_y(1, ax2)
 x6_x, x6_y = get_x_and_y(2, ax2)
@@ -119,6 +103,7 @@ ax3.text(w2, -0.15, 'Part time: {:.0f}%'.format(x8_x), fontdict={'color':'#449cb
 ax3.axis('off')
 
 plt.tight_layout()
+
 # to save the chart as a png image, uncomment the line below
 #plt.savefig("student_stats.png", bbox_inches="tight", dpi=200)
 plt.show()
