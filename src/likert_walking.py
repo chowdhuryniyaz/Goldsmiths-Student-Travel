@@ -21,7 +21,7 @@ df = df[['pedestrian_crossings',
         'pavements_not_wide']]
 
 df = df.rename(columns = {'pedestrian_crossings': 'Not enough pedestrian crossings',
-                        'congested_route': 'Route is crossings',
+                        'congested_route': 'Route is congested',
                         'walk_alone': 'Often walk alone',
                         'well_maintained_pavements': 'Pavements are well maintained',
                         'litter_on_route': 'Too much litter',
